@@ -1,15 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   test_printf_vs_ft_printf.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:26:51 by marcudos          #+#    #+#             */
-/*   Updated: 2024/11/21 15:41:19 by marcudos         ###   ########.fr       */
+/*   Updated: 2024/11/21 17:09:11 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../include/libftprintf.h"
+#include "../include/libcompareprintf.h"
+#include "../include/libcolors.h"
 
 int	main(void)
 {
