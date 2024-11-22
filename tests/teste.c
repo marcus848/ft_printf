@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   teste.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 13:03:12 by marcudos          #+#    #+#             */
-/*   Updated: 2024/10/28 13:28:07 by marcudos         ###   ########.fr       */
+/*   Created: 2024/11/22 19:49:35 by marcudos          #+#    #+#             */
+/*   Updated: 2024/11/22 20:21:11 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
+#include "../include/ft_printf.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *lnew)
+int	main(void)
 {
-	t_list	*temp;
-
-	if (!lst || !lnew)
-		return ;
-	if (!*lst)
-	{
-		*lst = lnew;
-		return ;
-	}
-	temp = *lst;
-	while (temp->next)
-		temp = temp->next;
-	temp->next = lnew;
+	ft_printf("teste");
 }

@@ -6,7 +6,7 @@
 /*   By: marcudos <marcudos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 17:16:46 by marcudos          #+#    #+#             */
-/*   Updated: 2024/10/28 14:37:37 by marcudos         ###   ########.fr       */
+/*   Updated: 2024/11/22 20:44:08 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);
 /* Bonus part - Linked list functions */
-void	ft_lstadd_front(t_list **lst, t_list *new);
-void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *lnew);
+void	ft_lstadd_back(t_list **lst, t_list *lnew);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
