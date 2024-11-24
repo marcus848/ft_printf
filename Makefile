@@ -39,8 +39,7 @@ re: fclean all
 TEST_DIR = tests
 TEST_SRCS = $(wildcard $(TEST_DIR)/*.c)
 TEST_BINS = $(TEST_SRCS:$(TEST_DIR)/%.c=$(BIN_DIR)/%)
-NAME_COMPARE = $(BIN_DIR)/compare_printf_tester
-SRCS_COMPARE = $(TESTS_DIR)/test_printf_vs_ft_printf.c
+NAME_COMPARE = $(BIN_DIR)/test_printf_vs_ft_printf_tester
 
 # Definindo algumas cores
 RED    := \033[0;31m
@@ -55,9 +54,9 @@ tests: $(TEST_BINS)
 	@echo "Todos os testes foram compilados."
 
 $(BIN_DIR)/%: $(TEST_DIR)/%.c $(NAME)
-	$(CC) $(CFLAGS) $< $(NAME) $(LIBFT) -o $@
+	$(CC) $(CFLAGS) $< $(NAME) $(LIBFT) -o $@_tester
 
-compare: $(NAME_COMPARE)
+compare: tests
 	@echo "$(B_YELLOW)Iniciando o comparativo$(NC)"
 	./$(NAME_COMPARE)
 

@@ -9,8 +9,7 @@
 /*   Updated: 2024/11/21 17:09:11 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../include/libcompareprintf.h"
-#include "../include/libcolors.h"
+#include "../include/libft.h"
 
 int	main(void)
 {
@@ -69,8 +68,8 @@ int	main(void)
 
 	printf(GREEN ">>>> Teste para o caractere de porcentagem: '%%'\n" RESET);
 	printf("> Percent sign test (%%%%): %%\n");
-	printf("> Percent sign with width (%%5%%): %5%\n");
-	printf("> Percent sign with '-' flag (%%-5%%): %-5%\n");
+	// printf("> Percent sign with width (%%5%%): %5%\n");
+	// printf("> Percent sign with '-' flag (%%-5%%): %-5%\n");
 
 	return (0);
 }

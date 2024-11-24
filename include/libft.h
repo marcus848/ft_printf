@@ -17,6 +17,9 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <stdbool.h>
+# include "ft_printf.h"
+# include "libcolors.h"
 
 typedef struct s_list
 {
