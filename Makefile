@@ -24,7 +24,7 @@ $(NAME): $(OBJS) $(LIBFT)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -g -c $< -o $@
 
 clean:
 	rm -rf $(OBJ_DIR)/*.o
@@ -54,7 +54,7 @@ tests: $(TEST_BINS)
 	@echo "Todos os testes foram compilados."
 
 $(BIN_DIR)/%: $(TEST_DIR)/%.c $(NAME)
-	$(CC) $(CFLAGS) $< $(NAME) $(LIBFT) -o $@_tester
+	$(CC) $(CFLAGS) -g $< $(NAME) $(LIBFT) -o $@_tester
 
 compare: tests
 	@echo "$(B_YELLOW)Iniciando o comparativo$(NC)"

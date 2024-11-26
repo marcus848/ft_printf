@@ -6,17 +6,20 @@
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:26:51 by marcudos          #+#    #+#             */
-/*   Updated: 2024/11/21 17:09:11 by marcudos         ###   ########.fr       */
+/*   Updated: 2024/11/26 17:48:49 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../include/libft.h"
+#include "../include/ft_printf.h"
 
 int	main(void)
 {
 	printf(GREEN ">>>> Testes para caractere: 'c'\n" RESET);
 	printf("> Char test (%%c): %c\n", 'A');
+	ft_printf("> Char test (XXc): %c\n", 'A');
 	printf("> Char test with width (%%5c): %5c\n", 'A');
-	printf("> Char test with '-' flag (%%-5c): %-5c\n\n", 'A');
+	ft_printf("> Char test with width (X5c): %5c\n", 'A');
+	printf("> Char test with '-' flag (%%-5c): %-5c\n", 'A');
+	ft_printf("> Char test with '-' flag (X-5c): %-5c\n\n", 'A');
 
 	printf(GREEN ">>>> Testes para string: 's'\n" RESET);
 	printf("> String test (%%s): %s\n", "Hello");

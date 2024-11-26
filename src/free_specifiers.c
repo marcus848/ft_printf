@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   free_specifiers.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 19:35:24 by marcudos          #+#    #+#             */
-/*   Updated: 2024/11/26 17:50:07 by marcudos         ###   ########.fr       */
+/*   Created: 2024/11/26 12:13:17 by marcudos          #+#    #+#             */
+/*   Updated: 2024/11/26 12:17:59 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+void	free_specifiers(t_list *lst_tokens)
 {
-	t_list	*lst_tokens;
-	va_list	args;
-	int		length;
-	
-	length = 0;
-	va_start(args, format);
-		lst_tokens = NULL;
-	parse_format(format, &lst_tokens);
-	length += print_format(format, lst_tokens, args);
-	free_specifiers(lst_tokens);
-	va_end(args);
-	return (length);
+	ft_lstclear(&lst_tokens, del_specifier);
+}
+
+void	del_specifier(void *content)
+{
+	t_spec *spec;
+
+	spec = (t_spec *)content;
+	if (spec)
+		free(spec);
 }

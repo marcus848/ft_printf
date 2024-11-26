@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   print_format_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 19:35:24 by marcudos          #+#    #+#             */
-/*   Updated: 2024/11/26 17:50:07 by marcudos         ###   ########.fr       */
+/*   Created: 2024/11/26 16:00:44 by marcudos          #+#    #+#             */
+/*   Updated: 2024/11/26 16:17:52 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+#include <unistd.h>
 
-int	ft_printf(const char *format, ...)
+char	define_pad(t_spec *spec)
 {
-	t_list	*lst_tokens;
-	va_list	args;
-	int		length;
-	
+	if (spec->flag_zero && !spec->flag_minus)
+		return ('0');
+	else
+		return (' ');
+}
+
+int	print_width_padding(int width, char pad_char)
+{
+	int	length;
+
 	length = 0;
-	va_start(args, format);
-		lst_tokens = NULL;
-	parse_format(format, &lst_tokens);
-	length += print_format(format, lst_tokens, args);
-	free_specifiers(lst_tokens);
-	va_end(args);
+	while (width > 0)
+	{
+		ft_putchar_fd(pad_char, 1);
+		width--;
+		length++;
+	}
 	return (length);
 }
