@@ -6,7 +6,7 @@
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 11:52:44 by marcudos          #+#    #+#             */
-/*   Updated: 2024/11/26 17:07:52 by marcudos         ###   ########.fr       */
+/*   Updated: 2024/11/27 19:49:28 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	parse_format(const char *format, t_list **lst_tokens)
 {
 	t_spec	*spec;
-	int			i;
+	int		i;
 
 	spec = NULL;
 	i = 0;

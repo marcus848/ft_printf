@@ -6,7 +6,7 @@
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:35:24 by marcudos          #+#    #+#             */
-/*   Updated: 2024/11/26 17:50:07 by marcudos         ###   ########.fr       */
+/*   Updated: 2024/11/27 19:48:48 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int	ft_printf(const char *format, ...)
 	t_list	*lst_tokens;
 	va_list	args;
 	int		length;
-	
+
 	length = 0;
 	va_start(args, format);
-		lst_tokens = NULL;
+	lst_tokens = NULL;
 	parse_format(format, &lst_tokens);
 	length += print_format(format, lst_tokens, args);
 	free_specifiers(lst_tokens);

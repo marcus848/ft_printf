@@ -62,7 +62,7 @@ compare: tests
 
 $(NAME_COMPARE): $(SRCS_COMPARE)
 	@echo "$(B_YELLOW)Compilando o arquivo $(SRCS_COMPARE)$(NC)"
-	$(CC) $(CFLAGS) $(SRCS_COMPARE) -o $(NAME_COMPARE)
+	$(CC) $(CFLAGS) -g $(SRCS_COMPARE) -o $(NAME_COMPARE)
 
 cleantestes:
 	rm -f $(BIN_DIR)/*tester

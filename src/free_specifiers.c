@@ -6,7 +6,7 @@
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:13:17 by marcudos          #+#    #+#             */
-/*   Updated: 2024/11/26 12:17:59 by marcudos         ###   ########.fr       */
+/*   Updated: 2024/11/27 19:48:06 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	free_specifiers(t_list *lst_tokens)
 
 void	del_specifier(void *content)
 {
-	t_spec *spec;
+	t_spec	*spec;
 
 	spec = (t_spec *)content;
 	if (spec)

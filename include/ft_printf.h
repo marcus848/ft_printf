@@ -6,7 +6,7 @@
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:21:19 by marcudos          #+#    #+#             */
-/*   Updated: 2024/11/26 16:26:05 by marcudos         ###   ########.fr       */
+/*   Updated: 2024/11/27 20:12:16 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,10 @@ int		print_pointer(t_spec *spec, va_list args);
 int		print_percent(t_spec *spec);
 char	define_pad(t_spec *spec);
 int		print_width_padding(int width, char pad_char);
+char	*convert_to_hex(unsigned long value, int uppercase);
+char	*hex_uppercase(int uppercase);
+int		print_null_pointer(t_spec *spec);
+int		print_pointer_with_width(t_spec *spec, char *hex_str);
+int		print_hex_with_width(t_spec *spec, char *hex_str);
 
 #endif // !FT_PRINTF_H
