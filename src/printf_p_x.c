@@ -60,6 +60,7 @@ int	print_hex(t_spec *spec, va_list args)
 	else
 		hex_str = convert_to_hex((unsigned long) i, 1);
 	length = print_hex_with_width(spec, hex_str);
+	free (hex_str);
 	return (length);
 }
 

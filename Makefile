@@ -12,6 +12,7 @@ BIN_DIR = bin
 SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 LIBFT = $(LIBFT_DIR)/libft.a
+LIBFT_OBJS = $(wildcard $(LIBFT_DIR)/src/*.o)
 
 # Mandatório
 all: $(LIBFT) $(NAME) 
@@ -20,7 +21,7 @@ $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
 $(NAME): $(OBJS) $(LIBFT)
-	ar rcs $(NAME) $(OBJS) $(LIBFT)
+	ar rcs $(NAME) $(OBJS) $(LIBFT_OBJS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
