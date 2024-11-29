@@ -53,12 +53,12 @@ int	process_token(t_spec *spec, va_list args)
 		return (print_pointer(spec, args));
 	else if (spec->conversion == 'x' || spec->conversion == 'X')
 		return (print_hex(spec, args));
-	// else if (spec->conversion == 'd' || spec->conversion == 'i')
-	// 	return (print_integer(spec, args));
-	// else if (spec->conversion == 'u')
-	// 	return (print_unsigned(spec, args));
-	// else if (spec->conversion == '%')
-	// 	return (print_percent(spec));
+	else if (spec->conversion == 'd' || spec->conversion == 'i')
+		return (print_integer(spec, args));
+	else if (spec->conversion == 'u')
+		return (print_unsigned(spec, args));
+	else if (spec->conversion == '%')
+		return (print_percent(spec));
 	return (0);
 }
 

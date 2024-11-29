@@ -6,7 +6,7 @@
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:56:24 by marcudos          #+#    #+#             */
-/*   Updated: 2024/11/27 19:53:47 by marcudos         ###   ########.fr       */
+/*   Updated: 2024/11/29 18:22:48 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	print_string(t_spec *spec, va_list args)
 	int		precision;
 
 	str = (char *) va_arg(args, char *);
+	if (!str)
+		str = "(nil)";
 	width = spec->width;
 	length = ft_strlen(str);
 	if (spec->is_precision_specified)
@@ -61,4 +63,14 @@ int	print_string(t_spec *spec, va_list args)
 		ft_putnstr_fd(str, precision, 1);
 	}
 	return (length);
+}
+
+int	print_percent(t_spec *spec)
+{
+	if (spec->conversion == '%')
+	{
+		ft_putchar_fd('%', 1);
+		return (1);
+	}
+	return (0);
 }

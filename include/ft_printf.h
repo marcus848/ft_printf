@@ -6,7 +6,7 @@
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:21:19 by marcudos          #+#    #+#             */
-/*   Updated: 2024/11/27 20:12:16 by marcudos         ###   ########.fr       */
+/*   Updated: 2024/11/29 18:53:50 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,9 @@ char	*hex_uppercase(int uppercase);
 int		print_null_pointer(t_spec *spec);
 int		print_pointer_with_width(t_spec *spec, char *hex_str);
 int		print_hex_with_width(t_spec *spec, char *hex_str);
+char	*define_sign_or_space(t_spec *spec, long nbr);
+char	*convert_to_str(long nbr, int precision);
+char	*add_precision_integer(char *nbr_str, int precision);
+int	print_integer_with_width(t_spec *spec, long nbr, char *nbr_str);
 
 #endif // !FT_PRINTF_H
