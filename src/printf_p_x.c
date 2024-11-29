@@ -6,7 +6,7 @@
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 18:47:12 by marcudos          #+#    #+#             */
-/*   Updated: 2024/11/27 20:27:23 by marcudos         ###   ########.fr       */
+/*   Updated: 2024/11/29 18:40:42 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ int	print_pointer_with_width(t_spec *spec, char *hex_str)
 
 int	print_hex(t_spec *spec, va_list args)
 {
-	char	*hex_str;
 	unsigned int	i;
-	int		length;
-	
+	char			*hex_str;
+	int				length;
+
 	i = va_arg(args, unsigned int);
 	if (spec->conversion == 'x')
 		hex_str = convert_to_hex((unsigned long) i, 0);
@@ -80,7 +80,7 @@ int	print_hex_with_width(t_spec *spec, char *hex_str)
 	if (spec->width > length && !spec->flag_minus)
 		length += print_width_padding(spec->width - length, define_pad(spec));
 	ft_putstr_fd(hex_str, 1);
-	if (spec->width > length && spec->flag_minus)	
+	if (spec->width > length && spec->flag_minus)
 		length += print_width_padding(spec->width - length, define_pad(spec));
 	return (length);
 }
