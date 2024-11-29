@@ -44,6 +44,8 @@ int	print_string(t_spec *spec, va_list args)
 	int		precision;
 
 	str = (char *) va_arg(args, char *);
+	if (!str)
+		str = "(nil)";
 	width = spec->width;
 	length = ft_strlen(str);
 	if (spec->is_precision_specified)
