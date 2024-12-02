@@ -6,7 +6,7 @@
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:56:24 by marcudos          #+#    #+#             */
-/*   Updated: 2024/11/29 18:22:48 by marcudos         ###   ########.fr       */
+/*   Updated: 2024/12/02 09:54:01 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	print_string(t_spec *spec, va_list args)
 
 	str = (char *) va_arg(args, char *);
 	if (!str)
-		str = "(nil)";
+		str = "(null)";
 	width = spec->width;
 	length = ft_strlen(str);
 	if (spec->is_precision_specified)
