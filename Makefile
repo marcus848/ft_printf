@@ -61,6 +61,10 @@ compare: tests
 	@echo "$(B_YELLOW)Iniciando o comparativo$(NC)"
 	./$(NAME_COMPARE)
 
+francinette: tests
+	@echo "$(B_YELLOW)Iniciando o teste de erros da Francinette$(NC)"
+	./bin/tests_francinette_tester
+
 $(NAME_COMPARE): $(SRCS_COMPARE)
 	@echo "$(B_YELLOW)Compilando o arquivo $(SRCS_COMPARE)$(NC)"
 	$(CC) $(CFLAGS) -g $(SRCS_COMPARE) -o $(NAME_COMPARE)

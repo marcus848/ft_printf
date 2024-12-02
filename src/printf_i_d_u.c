@@ -15,10 +15,10 @@
 int	print_integer(t_spec *spec, va_list args)
 {
 	char	*nbr_str;
-	int		nbr;
+	long		nbr;
 	int		length;
 
-	nbr = va_arg(args, int);
+	nbr = va_arg(args, long);
 	nbr_str = convert_to_str(nbr, spec->precision);
 	if (!nbr_str)
 		return (0);

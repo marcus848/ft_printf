@@ -50,10 +50,17 @@ char	*convert_to_str(long nbr, int precision)
 {
 	char	*nbr_str;
 
-	if (nbr < 0)
-		nbr_str = ft_itoa(-nbr);
+	if (nbr == -2147483648)
+		nbr_str = ft_strdup("2147483648");
 	else
-		nbr_str = ft_itoa(nbr);
+	{
+		if (nbr < 0)
+		{
+			nbr_str = ft_itoa(-nbr);
+		}
+		else
+			nbr_str = ft_itoa(nbr);
+	}
 	if (!nbr_str)
 		return (NULL);
 	return (add_precision_integer(nbr_str, precision));

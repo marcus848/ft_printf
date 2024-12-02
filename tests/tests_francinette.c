@@ -11,10 +11,20 @@
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+#include <limits.h>
 
 int	main(void)
 {
-	// printf(" NULL %s NULL ", NULL);
-	ft_printf(" NULL %s NULL ", NULL);
-	
+	printf(GREEN ">>>>> ERROS %%s  <<<<<\n" RESET);
+	printf(">> NULL %%s NULL -> não compila\n");
+	ft_printf(YELLOW ">> NULL %s NULL \n\n" RESET, NULL);
+
+	printf(GREEN ">>>>> ERROS %%d  <<<<<\n" RESET);
+	printf(">> INT_MIN %%d: %d\n", INT_MIN);
+	ft_printf(YELLOW ">> INT_MIN %%d: %d\n" RESET, INT_MIN);
+	printf(">> long line: -> não compila");
+	ft_printf(YELLOW ">> long line: %d %d %d %d %d %d %d" RESET, INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+
+
+
 }

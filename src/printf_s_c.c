@@ -39,29 +39,23 @@ int	print_char(t_spec *spec, va_list args)
 int	print_string(t_spec *spec, va_list args)
 {
 	char	*str;
-	int		width;
 	int		length;
-	int		precision;
+	int		str_len;
 
 	str = (char *) va_arg(args, char *);
 	if (!str)
 		str = "(null)";
-	width = spec->width;
+	str_len = ft_strlen(str);
 	length = ft_strlen(str);
-	if (spec->is_precision_specified)
-		precision = spec->precision;
-	else
-		precision = length;
-	if (spec->flag_minus)
-	{
-		ft_putnstr_fd(str, precision, 1);
-		length += print_width_padding(width - length, define_pad(spec));
-	}
-	else
-	{
-		length += print_width_padding(width - length, define_pad(spec));
-		ft_putnstr_fd(str, precision, 1);
-	}
+	if (spec->is_precision_specified && spec->precision < str_len)
+		str_len = spec->precision;
+	length = 0;
+	if (spec->width > str_len && !spec->flag_minus)
+		length += print_width_padding(spec->width - str_len, define_pad(spec));
+	ft_putnstr_fd(str, str_len, 1);
+	length += str_len;
+	if (spec->width > str_len && spec->flag_minus)
+		length += print_width_padding(spec->width - str_len, ' ');
 	return (length);
 }
 

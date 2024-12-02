@@ -60,6 +60,6 @@ int		print_hex_with_width(t_spec *spec, char *hex_str);
 char	*define_sign_or_space(t_spec *spec, long nbr);
 char	*convert_to_str(long nbr, int precision);
 char	*add_precision_integer(char *nbr_str, int precision);
-int	print_integer_with_width(t_spec *spec, long nbr, char *nbr_str);
+int		print_integer_with_width(t_spec *spec, long nbr, char *nbr_str);
 
 #endif // !FT_PRINTF_H
