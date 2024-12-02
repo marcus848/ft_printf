@@ -39,12 +39,12 @@ int	print_pointer_with_width(t_spec *spec, char *hex_str)
 	hex_len = ft_strlen(hex_str) + 2;
 	length = 0;
 	if (spec->width > hex_len && !spec->flag_minus)
-		length += print_width_padding(spec->width - hex_len, define_pad(spec));
+		length += print_width_padding(spec->width - hex_len, ' ');
 	ft_putstr_fd("0x", 1);
 	ft_putstr_fd(hex_str, 1);
 	length += hex_len;
 	if (spec->width > hex_len && spec->flag_minus)
-		length += print_width_padding(spec->width, define_pad(spec));
+		length += print_width_padding(spec->width, ' ');
 	return (length);
 }
 

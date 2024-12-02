@@ -54,10 +54,12 @@ int	main(void)
 	ft_printf(YELLOW ">> -101 %%u: %u\n" RESET, -101);
 	printf(">> INT_MIN %%u: %u\n", INT_MIN);
 	ft_printf(YELLOW ">> INT_MIN %%u: %u\n" RESET, INT_MIN);
-	// printf(">> LONG_MAX %%u: %u\n", LONG_MAX);
 	printf(">> UINT_MAX %%u: %u\n", UINT_MAX);
 	ft_printf(YELLOW ">> UINT_MAX %%u: %u\n" RESET, UINT_MAX);
-	// printf(">> ULONG_MAX %%u: %u\n", ULONG_MAX);
-	// printf(">> Numero grande %%u: %u\n", 9223372036854775807LL);
-	// printf(">> Long line: %-9u %-10u %-11u %-12u %-13u %-14u %-15u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+
+	printf(GREEN "\n >>>>> BONUS PARTE ERROS <<<<<\n\n" RESET);
+	printf(RED ">>>>> ERROS %%p <<<<<\n" RESET);
+	printf(" %-11p %-12p ", INT_MIN, INT_MAX);
+	// printf(" %-13p %-14p ", ULONG_MAX, -ULONG_MAX);
+
 }
