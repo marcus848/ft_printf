@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	ft_how_many_digits(int n)
+static int	ft_how_many_digits(long n)
 {
 	int	count;
 
@@ -36,14 +36,14 @@ static void	ft_make_str(char *str, long num, int digits)
 	}
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long n)
 {
 	char	*str;
 	long	num;
 	int		digits;
 
 	num = n;
-	digits = ft_how_many_digits(n);
+	digits = ft_how_many_digits(num);
 	str = (char *) malloc(sizeof(char) * (digits + 1));
 	if (!str)
 		return (NULL);

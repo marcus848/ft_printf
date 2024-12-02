@@ -45,7 +45,7 @@ int	print_string(t_spec *spec, va_list args)
 
 	str = (char *) va_arg(args, char *);
 	if (!str)
-		str = "(nil)";
+		str = "(null)";
 	width = spec->width;
 	length = ft_strlen(str);
 	if (spec->is_precision_specified)
