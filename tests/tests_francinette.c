@@ -22,8 +22,8 @@ int	main(void)
 	printf(GREEN ">>>>> ERROS %%d  <<<<<\n" RESET);
 	printf(">> INT_MIN %%d: %d\n", INT_MIN);
 	ft_printf(YELLOW ">> INT_MIN %%d: %d\n" RESET, INT_MIN);
-	printf(">> long line: -> não compila");
-	ft_printf(YELLOW ">> long line: %d %d %d %d %d %d %d" RESET, INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	printf(">> long line: -> não compila\n");
+	ft_printf(YELLOW ">> long line: %d %d %d %d %d %d %d\n\n" RESET, INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 
 
 
