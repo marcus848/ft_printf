@@ -52,12 +52,12 @@ int	print_null_pointer(t_spec *spec)
 	int	length;
 
 	if (spec->width > 5 && !spec->flag_minus)
-		length = print_width_padding(spec->width - 5, define_pad(spec));
+		length = print_width_padding(spec->width - 5, ' ');
 	else
 		length = 0;
 	ft_putstr_fd("(nil)", 1);
 	length += 5;
 	if (spec->width > 5 && spec->flag_minus)
-		length += print_width_padding(spec->width - 5, define_pad(spec));
+		length += print_width_padding(spec->width - 5, ' ');
 	return (length);
 }
