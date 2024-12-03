@@ -69,6 +69,10 @@ printf: tests
 	@echo "$(B_YELLOW)Iniciando o teste de erros: ft_printf_test$(NC)"
 	./bin/ft_printf_test_tester
 
+tester: tests
+	@echo "$(B_YELLOW)Iniciando o teste de erros: printfTester$(NC)"
+	./bin/printftester_tester
+
 $(NAME_COMPARE): $(SRCS_COMPARE)
 	@echo "$(B_YELLOW)Compilando o arquivo $(SRCS_COMPARE)$(NC)"
 	$(CC) $(CFLAGS) -g $(SRCS_COMPARE) -o $(NAME_COMPARE)

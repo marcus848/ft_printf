@@ -6,7 +6,7 @@
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 18:47:12 by marcudos          #+#    #+#             */
-/*   Updated: 2024/11/29 18:40:42 by marcudos         ###   ########.fr       */
+/*   Updated: 2024/12/03 15:37:40 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,12 @@ int	print_hex_with_width(t_spec *spec, char *hex_str)
 	int	length;
 
 	length = ft_strlen(hex_str);
-	if (spec->flag_hash)
+	if (spec->flag_hash && ft_strncmp(hex_str, "0", length))
 		length += 2;
 	if (spec->width > length && !spec->flag_minus
 		&& (!spec->flag_zero || spec->is_precision_specified))
 		length += print_width_padding(spec->width - length, ' ');
-	if (spec->flag_hash)
+	if (spec->flag_hash && ft_strncmp(hex_str, "0", length))
 	{
 		if (spec->conversion == 'x')
 			ft_putstr_fd("0x", 1);
