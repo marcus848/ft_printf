@@ -61,3 +61,26 @@ int	print_null_pointer(t_spec *spec)
 		length += print_width_padding(spec->width - 5, ' ');
 	return (length);
 }
+
+char	*add_precision_hex(t_spec *spec, char *str_hex)
+{
+	char	*padding;
+	char	*result;
+	int		str_len;
+
+	str_len = ft_strlen(str_hex);
+	if (spec->precision <= str_len)
+		return (str_hex);
+	padding = malloc(spec->precision - str_len + 1);
+	if (!padding)
+	{
+		free(str_hex);
+		return (NULL);
+	}
+	ft_memset(padding, '0', spec->precision - str_len);
+	padding[spec->precision - str_len] = '\0';
+	result = ft_strjoin(padding, str_hex);
+	free(str_hex);
+	free(padding);
+	return (result);
+}

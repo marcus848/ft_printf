@@ -19,7 +19,7 @@ int	print_pointer(t_spec *spec, va_list args)
 	char			*hex_str;
 	int				length;
 
-	ptr = va_arg(args, void *);
+	ptr = (void *) va_arg(args, void *);
 	if (!ptr)
 		return (print_null_pointer(spec));
 	address = (unsigned long) ptr;
@@ -59,6 +59,7 @@ int	print_hex(t_spec *spec, va_list args)
 		hex_str = convert_to_hex((unsigned long) i, 0);
 	else
 		hex_str = convert_to_hex((unsigned long) i, 1);
+	hex_str = add_precision_hex(spec, hex_str);
 	length = print_hex_with_width(spec, hex_str);
 	free (hex_str);
 	return (length);
@@ -70,15 +71,18 @@ int	print_hex_with_width(t_spec *spec, char *hex_str)
 
 	length = ft_strlen(hex_str);
 	if (spec->flag_hash)
+		length += 2;
+	if (spec->width > length && !spec->flag_minus && !spec->flag_zero)
+		length += print_width_padding(spec->width - length, ' ');
+	if (spec->flag_hash)
 	{
 		if (spec->conversion == 'x')
 			ft_putstr_fd("0x", 1);
 		else
 			ft_putstr_fd("0X", 1);
-		length += 2;
 	}
-	if (spec->width > length && !spec->flag_minus)
-		length += print_width_padding(spec->width - length, define_pad(spec));
+	if (spec->width > length && spec->flag_zero && !spec->flag_minus)
+		length += print_width_padding(spec->width - length, '0');
 	ft_putstr_fd(hex_str, 1);
 	if (spec->width > length && spec->flag_minus)
 		length += print_width_padding(spec->width - length, define_pad(spec));

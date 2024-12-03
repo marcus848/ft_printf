@@ -57,9 +57,38 @@ int	main(void)
 	printf(">> UINT_MAX %%u: %u\n", UINT_MAX);
 	ft_printf(YELLOW ">> UINT_MAX %%u: %u\n" RESET, UINT_MAX);
 
-	printf(GREEN "\n >>>>> BONUS PARTE ERROS <<<<<\n\n" RESET);
+	printf(GREEN "\n>>>>> BONUS PARTE ERROS <<<<<\n\n" RESET);
 	printf(RED ">>>>> ERROS %%p <<<<<\n" RESET);
-	printf(" %-11p %-12p ", INT_MIN, INT_MAX);
+	ft_printf(YELLOW " %-11p %-12p \n" RESET, INT_MIN, INT_MAX);
+	ft_printf(YELLOW " %-11p %-12p \n\n" RESET, ULONG_MAX, -ULONG_MAX);
 	// printf(" %-13p %-14p ", ULONG_MAX, -ULONG_MAX);
+
+	printf(RED ">>>>> ERROS %%s <<<<<\n" RESET);
+	printf(" %.s teste\n", "-");
+	ft_printf(YELLOW " %.s teste\n" RESET, "-");
+	printf(" %.1s %.2s %.3s %.4s \n", " - ", "", "4", "");
+	ft_printf(YELLOW " %.1s %.2s %.3s %.4s \n" RESET, " - ", "", "4", "");
+	printf(" %.2s %.3s %.4s %.5s %.1s \n", " - ", "", "4", "", "2 ");
+	ft_printf(YELLOW " %.2s %.3s %.4s %.5s %.1s \n" RESET, " - ", "", "4", "", "2 ");
+	
+	printf(RED ">>>>> ERROS %%x <<<<<\n" RESET);
+	printf("%#5.4x\n", 42);
+	ft_printf("%#5.4x\n", 42);
+	printf("%#8x\n", 42);
+	// printf(" %.2x ", 1); 
+	// printf(" %.2x ", 10); 
+	// printf(" %.2x ", 11); 
+	// printf(" %.2x ", 15); 
+	// printf(" %.2x ", 16); 
+	// printf(" %.2x ", 17); 
+	// printf(" %.2x ", 101); 
+	// printf(" %.2x ", INT_MIN); 
+	// printf(" %.2x ", LONG_MAX); 
+	// printf(" %.2x ", LONG_MIN); 
+	// printf(" %.2x ", UINT_MAX); 
+	// printf(" %.2x ", ULONG_MAX); 
+	// // printf(" %.2x ", 9223372036854775807LL); 
+	// printf(" %.8x %.9x %.10x %.11x %.12x %.13x %.14x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	
 
 }
