@@ -72,7 +72,8 @@ int	print_hex_with_width(t_spec *spec, char *hex_str)
 	length = ft_strlen(hex_str);
 	if (spec->flag_hash)
 		length += 2;
-	if (spec->width > length && !spec->flag_minus && !spec->flag_zero)
+	if (spec->width > length && !spec->flag_minus
+		&& (!spec->flag_zero || spec->is_precision_specified))
 		length += print_width_padding(spec->width - length, ' ');
 	if (spec->flag_hash)
 	{

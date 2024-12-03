@@ -35,9 +35,7 @@ int	print_format(const char *format, t_list *lst_tokens, va_list args)
 		}
 		else
 		{
-			ft_putchar_fd(format[i], 1);
-			length++;
-			i++;
+			length += write_plain_text(format, &i, 1);
 		}
 	}
 	return (length);
@@ -69,4 +67,17 @@ int	next_letter(const char *format, int i)
 	if (ft_strchr(SPECIFIERS, format[i]))
 		i++;
 	return (i);
+}
+
+int	write_plain_text(const char *format, int *i, int fd)
+{
+	int	length = 0;
+
+	while (format[*i] && format[*i] != '%')
+	{
+		ft_putchar_fd(format[*i], fd);
+		length++;
+		(*i)++;
+	}
+	return (length);
 }

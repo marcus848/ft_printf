@@ -28,7 +28,7 @@ char	*add_precision_integer(char *nbr_str, t_spec *spec)
 	char	*padding;
 	char	*result;
 	int		nbr_len;
-	
+
 	nbr_len = ft_strlen(nbr_str);
 	if (spec->is_precision_specified && spec->precision == 0)
 		return (ft_strdup(""));
@@ -51,7 +51,7 @@ char	*add_precision_integer(char *nbr_str, t_spec *spec)
 char	*convert_to_str(long nbr, t_spec *spec)
 {
 	char	*nbr_str;
-	
+
 	if (nbr == -2147483648)
 		nbr_str = ft_strdup("2147483648");
 	else

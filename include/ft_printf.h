@@ -43,6 +43,7 @@ int		ft_printf(const char *format, ...);
 int		next_letter(const char *format, int i);
 int		print_format(const char *format, t_list *lst_tokens, va_list args);
 int		process_token(t_spec *spec, va_list args);
+int		write_plain_text(const char *format, int *i, int fd);
 int		print_char(t_spec *spec, va_list args);
 int		print_string(t_spec *spec, va_list args);
 int		print_integer(t_spec *spec, va_list args);
