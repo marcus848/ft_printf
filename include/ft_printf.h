@@ -6,7 +6,7 @@
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:21:19 by marcudos          #+#    #+#             */
-/*   Updated: 2024/11/29 18:53:50 by marcudos         ###   ########.fr       */
+/*   Updated: 2024/12/03 10:39:01 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ char	*convert_to_str(long nbr, int precision);
 char	*add_precision_integer(char *nbr_str, int precision);
 int		print_integer_with_width(t_spec *spec, long nbr, char *nbr_str);
 char	*add_precision_hex(t_spec *spec, char *str_hex);
+char	*make_null_string(t_spec *spec);
 
 #endif // !FT_PRINTF_H
