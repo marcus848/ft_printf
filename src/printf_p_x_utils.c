@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+#include <string.h>
 
 char	*convert_to_hex(unsigned long value, int uppercase)
 {
@@ -69,6 +70,8 @@ char	*add_precision_hex(t_spec *spec, char *str_hex)
 	int		str_len;
 
 	str_len = ft_strlen(str_hex);
+	if (spec->is_precision_specified && spec->precision == 0)
+		return (ft_strdup(""));
 	if (spec->precision <= str_len)
 		return (str_hex);
 	padding = malloc(spec->precision - str_len + 1);

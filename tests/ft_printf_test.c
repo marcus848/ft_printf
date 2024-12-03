@@ -14,5 +14,5 @@
 
 int	main(void)
 {
-	ft_printf("\"%08.5x\"\n" , 34);
+	ft_printf("%5.0x", 0);	
 }
