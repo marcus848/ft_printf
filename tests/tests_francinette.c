@@ -70,7 +70,9 @@ int	main(void)
 	ft_printf(YELLOW " %.1s %.2s %.3s %.4s \n" RESET, " - ", "", "4", "");
 	printf(" %.2s %.3s %.4s %.5s %.1s \n", " - ", "", "4", "", "2 ");
 	ft_printf(YELLOW " %.2s %.3s %.4s %.5s %.1s \n" RESET, " - ", "", "4", "", "2 ");
-	
+	ft_printf("%7.5s\n", "bombastic");
+	ft_printf("%-7.5s\n", "tubular");
+	ft_printf("%7.3s%7.7s\n", "hello", "world");
 	printf(RED ">>>>> ERROS %%x <<<<<\n" RESET);
 	printf("%#5.4x\n", 42);
 	ft_printf("%#5.4x\n", 42);

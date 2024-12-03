@@ -46,7 +46,6 @@ int	print_string(t_spec *spec, va_list args)
 	if (!str)
 		str = "(null)";
 	str_len = ft_strlen(str);
-	length = ft_strlen(str);
 	if (spec->is_precision_specified && spec->precision < str_len)
 		str_len = spec->precision;
 	length = 0;
