@@ -14,8 +14,6 @@
 
 int	main(void)
 {
-	printf("\"p22 %.0x\"\n", 100);	
-	ft_printf("\"p22 %.0x\"\n", 100);	
-	printf("\"p22 %20.x\"\n", 0x1234abcdu);	
-	ft_printf("\"p22 %20.x\"\n", 0x1324abcdu);	
+	printf("\"%013.i\"\n" , -14884961);
+	ft_printf("\"%013.i\"\n" , -14884961);
 }

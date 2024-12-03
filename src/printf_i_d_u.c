@@ -46,7 +46,7 @@ int	print_integer_with_width(t_spec *spec, long nbr, char *nbr_str)
 		ft_putstr_fd(sign, 1);
 		length++;
 	}
-	if (spec->flag_zero && !spec->flag_minus && spec->precision == 0)
+	if (spec->flag_zero && !spec->flag_minus && !spec->is_precision_specified)
 		length += print_width_padding(spec->width - total_len, '0');
 	ft_putstr_fd(nbr_str, 1);
 	length += ft_strlen(nbr_str);
