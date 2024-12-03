@@ -23,33 +23,35 @@ char	*define_sign_or_space(t_spec *spec, long nbr)
 	return (NULL);
 }
 
-char	*add_precision_integer(char *nbr_str, int precision)
+char	*add_precision_integer(char *nbr_str, t_spec *spec)
 {
 	char	*padding;
 	char	*result;
 	int		nbr_len;
-
+	
 	nbr_len = ft_strlen(nbr_str);
-	if (precision <= nbr_len)
+	if (spec->is_precision_specified && spec->precision == 0)
+		return (ft_strdup(""));
+	if (spec->precision <= nbr_len)
 		return (nbr_str);
-	padding = (char *) malloc(precision - nbr_len + 1);
+	padding = (char *) malloc(spec->precision - nbr_len + 1);
 	if (!padding)
 	{
 		free(nbr_str);
 		return (NULL);
 	}
-	ft_memset(padding, '0', precision - nbr_len);
-	padding[precision - nbr_len] = '\0';
+	ft_memset(padding, '0', spec->precision - nbr_len);
+	padding[spec->precision - nbr_len] = '\0';
 	result = ft_strjoin(padding, nbr_str);
 	free(padding);
 	free(nbr_str);
 	return (result);
 }
 
-char	*convert_to_str(long nbr, int precision)
+char	*convert_to_str(long nbr, t_spec *spec)
 {
 	char	*nbr_str;
-
+	
 	if (nbr == -2147483648)
 		nbr_str = ft_strdup("2147483648");
 	else
@@ -63,5 +65,5 @@ char	*convert_to_str(long nbr, int precision)
 	}
 	if (!nbr_str)
 		return (NULL);
-	return (add_precision_integer(nbr_str, precision));
+	return (add_precision_integer(nbr_str, spec));
 }

@@ -47,9 +47,8 @@ void	parse_precision(const char *format, int *i, t_spec *spec)
 		spec->is_precision_specified = 1;
 		*i += 1;
 		spec->precision = ft_atoi(&format[*i]);
-		if (spec->precision)
-			while (format[*i] >= '0' && format[*i] <= '9')
-				*i += 1;
+		while (format[*i] >= '0' && format[*i] <= '9')
+			*i += 1;
 	}
 }
 

@@ -19,7 +19,7 @@ int	print_integer(t_spec *spec, va_list args)
 	int		length;
 
 	nbr = va_arg(args, int);
-	nbr_str = convert_to_str(nbr, spec->precision);
+	nbr_str = convert_to_str(nbr, spec);
 	if (!nbr_str)
 		return (0);
 	length = print_integer_with_width(spec, nbr, nbr_str);
@@ -38,7 +38,8 @@ int	print_integer_with_width(t_spec *spec, long nbr, char *nbr_str)
 	if (sign)
 		total_len++;
 	length = 0;
-	if (spec->width > total_len && !spec->flag_minus && !spec->flag_zero)
+	if (spec->width > total_len && !spec->flag_minus
+		&& (!spec->flag_zero || spec->is_precision_specified))
 		length += print_width_padding(spec->width - total_len, ' ');
 	if (sign)
 	{
@@ -61,7 +62,7 @@ int	print_unsigned(t_spec *spec, va_list args)
 	int				length;
 
 	nbr = va_arg(args, unsigned int);
-	nbr_str = convert_to_str(nbr, spec->precision);
+	nbr_str = convert_to_str(nbr, spec);
 	if (!nbr_str)
 		return (0);
 	length = print_integer_with_width(spec, nbr, nbr_str);
