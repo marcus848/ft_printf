@@ -51,7 +51,7 @@ B_RED    := \033[1;31m
 B_GREEN  := \033[1;32m
 B_YELLOW := \033[1;33m
 
-tests: $(TEST_BINS)
+tests: $(TEST_BINS) $(NAME)
 	@echo "Todos os testes foram compilados."
 
 $(BIN_DIR)/%: $(TEST_DIR)/%.c $(NAME)
