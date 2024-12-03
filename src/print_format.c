@@ -71,8 +71,9 @@ int	next_letter(const char *format, int i)
 
 int	write_plain_text(const char *format, int *i, int fd)
 {
-	int	length = 0;
+	int	length;
 
+	length = 0;
 	while (format[*i] && format[*i] != '%')
 	{
 		ft_putchar_fd(format[*i], fd);

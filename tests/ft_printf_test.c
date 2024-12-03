@@ -14,5 +14,19 @@
 
 int	main(void)
 {
-	ft_printf("%5.0x", 0);	
+	char	a01 = '1';
+	char	a02 = '1';
+	char	a03 = '1';
+	char	a04 = '1';
+	char	a05 = '1';
+	char	a06 = '1';
+	char	a07 = '1';
+	char	a08 = '1';
+	char	a09 = '1';
+	char	a10 = '1';
+	char	a11 = '1';
+	char	a12 = '1';
+
+	printf("oo_printf: \"%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p\"\n",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+	ft_printf("ft_printf: \"%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p\"\n",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
 }

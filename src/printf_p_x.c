@@ -44,7 +44,7 @@ int	print_pointer_with_width(t_spec *spec, char *hex_str)
 	ft_putstr_fd(hex_str, 1);
 	length += hex_len;
 	if (spec->width > hex_len && spec->flag_minus)
-		length += print_width_padding(spec->width, ' ');
+		length += print_width_padding(spec->width - hex_len, ' ');
 	return (length);
 }
 
