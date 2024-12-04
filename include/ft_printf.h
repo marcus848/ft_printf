@@ -51,7 +51,7 @@ int		print_unsigned(t_spec *spec, va_list args);
 int		print_hex(t_spec *spec, va_list args);
 int		print_pointer(t_spec *spec, va_list args);
 int		print_percent(t_spec *spec);
-char	define_pad(t_spec *spec);
+// char	define_pad(t_spec *spec);
 int		print_width_padding(int width, char pad_char);
 char	*convert_to_hex(unsigned long value, int uppercase);
 char	*hex_uppercase(int uppercase);

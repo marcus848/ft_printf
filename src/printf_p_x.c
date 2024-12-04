@@ -86,6 +86,6 @@ int	print_hex_with_width(t_spec *spec, char *hex_str)
 		length += print_width_padding(spec->width - length, '0');
 	ft_putstr_fd(hex_str, 1);
 	if (spec->width > length && spec->flag_minus)
-		length += print_width_padding(spec->width - length, define_pad(spec));
+		length += print_width_padding(spec->width - length, ' ');
 	return (length);
 }

@@ -12,14 +12,6 @@
 
 #include "../include/ft_printf.h"
 
-char	define_pad(t_spec *spec)
-{
-	if (spec->flag_zero && !spec->flag_minus)
-		return ('0');
-	else
-		return (' ');
-}
-
 int	print_width_padding(int width, char pad_char)
 {
 	int	length;

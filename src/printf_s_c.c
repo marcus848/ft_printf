@@ -25,11 +25,11 @@ int	print_char(t_spec *spec, va_list args)
 	{
 		ft_putchar_fd(c, 1);
 		length++;
-		length += print_width_padding(width - 1, define_pad(spec));
+		length += print_width_padding(width - 1, ' ');
 	}
 	else
 	{
-		length += print_width_padding(width - 1, define_pad(spec));
+		length += print_width_padding(width - 1, ' ');
 		ft_putchar_fd(c, 1);
 		length++;
 	}
@@ -50,7 +50,7 @@ int	print_string(t_spec *spec, va_list args)
 		str_len = spec->precision;
 	length = 0;
 	if (spec->width > str_len && !spec->flag_minus)
-		length += print_width_padding(spec->width - str_len, define_pad(spec));
+		length += print_width_padding(spec->width - str_len, ' ');
 	ft_putnstr_fd(str, str_len, 1);
 	length += str_len;
 	if (spec->width > str_len && spec->flag_minus)
