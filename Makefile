@@ -9,10 +9,11 @@ OBJ_DIR = obj
 APPS_DIR = apps
 BIN_DIR = bin
 #files
-SRCS = $(wildcard $(SRC_DIR)/*.c)
+SRCS = $(SRC_DIR)/free_specifiers.c $(SRC_DIR)/ft_printf.c $(SRC_DIR)/parse_format.c $(SRC_DIR)/parse_utils.c \
+	$(SRC_DIR)/print_format.c $(SRC_DIR)/print_format_utils.c $(SRC_DIR)/printf_i_d_u.c $(SRC_DIR)/printf_i_d_u_utils.c \
+	$(SRC_DIR)/printf_p_x.c $(SRC_DIR)/printf_p_x_utils.c $(SRC_DIR)/printf_s_c_percent.c
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 LIBFT = $(LIBFT_DIR)/libft.a
-LIBFT_OBJS = $(wildcard $(LIBFT_DIR)/src/*.o)
 
 # Mandatório
 all: $(LIBFT) $(NAME) 
@@ -21,7 +22,9 @@ $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
 $(NAME): $(OBJS) $(LIBFT)
-	ar rcs $(NAME) $(OBJS) $(LIBFT_OBJS)
+	@cp $(LIBFT) $(NAME)
+	ar rcs $(NAME) $(OBJS)
+	# ar rcs $(NAME) $(OBJS) $(LIBFT_OBJS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
