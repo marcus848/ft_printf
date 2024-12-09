@@ -32,7 +32,7 @@ char	*add_precision_integer(char *nbr_str, t_spec *spec)
 	nbr_len = ft_strlen(nbr_str);
 	if (spec->is_precision_specified && spec->precision == 0
 		&& ft_atoi(nbr_str) == 0)
-		return (free(nbr_str), ft_strdup(""));
+		return (ft_strdup(""));
 	if (spec->precision <= nbr_len)
 		return (nbr_str);
 	padding = (char *) malloc(spec->precision - nbr_len + 1);
