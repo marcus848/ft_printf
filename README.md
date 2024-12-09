@@ -196,25 +196,50 @@ int     ft_printf(const char *format, ...)
 ```
 
 ### 📊 Fluxograma da Lista Linkada
+```mermaid
 ---
-title: Fluxo grama Lista Linkada
+title: Fluxo grama Lista Linkada (tokens %-10c, %+.5d e %#020X) 
 ---
 stateDiagram-v2
-    [*] --> First
-    state First {
-        [*] --> second
-        second --> [*]
+    direction LR
+    1no --> 2no : t_list *next \n(proximo nó)
+    2no --> 3no : t_list *next \n(proximo nó)
+    3no --> [*] : t_list *next \n(NULL)
+    1no: node 1 (%-10c)
+    2no: node 2 (%+.5d)
+    3no: node 3 (%020X)
+    state 1no {
+        direction LR
+        c1 : content
+        s1 : t_spec
+        c1 --> s1 : Void * para 
+        state s1 {
+            direction LR    
+            specs1 : conversion = c \n flag_minus = 1 \n flag_zero = 0 \n flag_hash = 0 \n flag_space = 0 \n flag_plus = 0 \n width = 10 \n precision = 0 \n is_precision_specifier = 0
+        }
+    }
+    state 2no {
+        direction LR
+        c2 : content
+        s2 : t_spec
+        c2 --> s2 : Void * para
+        state s2 {
+            direction LR    
+            specs2 : conversion = d \n flag_minus = 0 \n flag_zero = 0 \n flag_hash = 0 \n flag_space = 0 \n flag_plus = 1 \n width = 0 \n precision = 5 \n is_precision_specifier = 1
+        }
+    }
+    state 3no {
+        direction LR
+        c3 : content
+        s3 : t_spec
+        c3 --> s3 : Void * para
+        state s3 {
+            direction LR    
+            specs3 : conversion = X \n flag_minus = 0 \n flag_zero = 1 \n flag_hash = 0 \n flag_space = 0 \n flag_plus = 0 \n width = 20 \n precision = 0 \n is_precision_specifier = 0
+        }
     }
 
-    [*] --> NamedComposite
-    NamedComposite: Another Composite
-    state NamedComposite {
-        [*] --> namedSimple
-        namedSimple --> [*]
-        namedSimple: Another simple
-    }
-
-
+```
 
 ## Instalação
 
