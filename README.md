@@ -152,6 +152,7 @@ O `ft_printf` processa uma string de entrada com especificadores (%) e gera uma 
         int     is_precision_specified;  // Flag para precisão especificada
     }       t_spec;
   ```
+    - is_precision_specified: ela é necessário porque todos os valores são iniciados com 0, mas o precision pode ser passado como 0 e ser válido (oq muda a saída do token), então é necessário uma axiliar para verificar se o precision foi especificado
 
 ### 2️⃣ Processamento e Impressão
 - Para cada nó da lista ligada:
@@ -214,7 +215,7 @@ stateDiagram-v2
         s1 : t_spec
         c1 --> s1 : Void * para 
         state s1 {
-            direction LR    
+            direction LR   
             specs1 : conversion = c \n flag_minus = 1 \n flag_zero = 0 \n flag_hash = 0 \n flag_space = 0 \n flag_plus = 0 \n width = 10 \n precision = 0 \n is_precision_specifier = 0
         }
     }
@@ -240,6 +241,13 @@ stateDiagram-v2
     }
 
 ```
+
+## Bonus
+o bonus precisa tratar as seguinte flags: ".-0# +"(o espaço faz parte) e o width, essas flags formatam a saída do token(%) e para cada tipo de conversão tem um funcionamento diferente
+<details>
+<summary >%c</summary>
+asdfafasd
+</details>
 
 ## Instalação
 
