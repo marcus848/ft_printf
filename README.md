@@ -243,10 +243,36 @@ stateDiagram-v2
 ```
 
 ## Bonus
-o bonus precisa tratar as seguinte flags: ".-0# +"(o espaço faz parte) e o width, essas flags formatam a saída do token(%) e para cada tipo de conversão tem um funcionamento diferente
+O bônus implementa o tratamento das flags `. - 0 # +` (incluindo o espaço) e da
+largura mínima do campo. Essas opções afetam o formato de cada token `%` e o
+comportamento varia conforme a conversão utilizada.
 <details>
-<summary >%c</summary>
-asdfafasd
+<summary>%c</summary>
+
+A conversão de caractere respeita apenas o flag `-` e o `width`, ignorando os
+demais. O `width` define o espaço reservado e o `-` alinha o caractere à
+esquerda.
+
+</details>
+
+<details>
+<summary>%s</summary>
+
+- `-` alinha a string à esquerda.
+- `.` limita o número de caracteres exibidos.
+- `width` define o espaço mínimo reservado.
+
+</details>
+
+<details>
+<summary>%d / %i / %u / %x / %X / %p</summary>
+
+- `0` ativa o preenchimento com zeros quando apropriado.
+- `-` alinha à esquerda.
+- `+` e espaço controlam o sinal dos números positivos.
+- `#` adiciona prefixos como `0x` ou `0X`.
+- `width` e `precision` definem o tamanho mínimo e a precisão.
+
 </details>
 
 ## Instalação
@@ -281,4 +307,8 @@ int main()
 }
 ```
 
-<!---->
+## Autor
+Marcus Vinícius - [marcudos@42sp.org.br](mailto:marcudos@42sp.org.br)
+
+## Contribuição
+Contribuições são bem-vindas! Abra issues ou envie pull requests.
